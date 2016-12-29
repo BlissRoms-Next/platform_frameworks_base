@@ -4869,6 +4869,16 @@ public final class Settings {
          */
         public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
 
+        /**
+         * media artwork wallpaper blur level on lockscreen
+         * @hide
+         */
+        public static final String OMNI_LOCKSCREEN_MEDIA_BLUR = "lockscreen_media_blur";
+
+        private static final Validator OMNI_LOCKSCREEN_MEDIA_BLUR_VALIDATOR =
+                ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -4938,7 +4948,16 @@ public final class Settings {
             HEADS_UP_BLACKLIST_VALUES,
             ENABLE_CONDITIONS,
             ENABLE_SUGGESTIONS,
+<<<<<<< HEAD
             SCREEN_OFF_ANIMATION
+=======
+            OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+            OMNI_QS_LAYOUT_COLUMNS,
+            FINGERPRINT_SUCCESS_VIB,
+            OMNI_QS_TILE_TITLE_VISIBILITY,
+            OMNI_BACK_GESTURE_HEIGHT,
+            OMNI_LOCKSCREEN_MEDIA_BLUR,
+>>>>>>> 65e113353f0... base: configure lock screen media artwork blur level [1/2]
         };
 
         /**
@@ -5064,8 +5083,18 @@ public final class Settings {
             PRIVATE_SETTINGS.add(HEADS_UP_BLACKLIST_VALUES);
             PRIVATE_SETTINGS.add(ENABLE_CONDITIONS);
             PRIVATE_SETTINGS.add(ENABLE_SUGGESTIONS);
+<<<<<<< HEAD
             PRIVATE_SETTINGS.add(SCREEN_OFF_ANIMATION);
             PRIVATE_SETTINGS.add(SCREENSHOT_DEFAULT_MODE);
+=======
+            PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE);
+            PRIVATE_SETTINGS.add(OMNI_QS_LAYOUT_COLUMNS);
+            PRIVATE_SETTINGS.add(FINGERPRINT_SUCCESS_VIB);
+            PRIVATE_SETTINGS.add(OMNI_LOCKSCREEN_MEDIA_BLUR);
+            PRIVATE_SETTINGS.add(OMNI_QS_TILE_TITLE_VISIBILITY);
+            PRIVATE_SETTINGS.add(TOAST_ICON);
+            PRIVATE_SETTINGS.add(OMNI_BACK_GESTURE_HEIGHT);
+>>>>>>> 65e113353f0... base: configure lock screen media artwork blur level [1/2]
         }
 
         /**
@@ -5166,7 +5195,17 @@ public final class Settings {
             VALIDATORS.put(HEADS_UP_BLACKLIST_VALUES, HEADS_UP_BLACKLIST_VALUES_VALIDATOR);
             VALIDATORS.put(ENABLE_CONDITIONS, ENABLE_CONDITIONS_VALIDATOR);
             VALIDATORS.put(ENABLE_SUGGESTIONS, ENABLE_SUGGESTIONS_VALIDATOR);
+<<<<<<< HEAD
             VALIDATORS.put(SCREEN_OFF_ANIMATION, SCREEN_OFF_ANIMATION_VALIDATOR);
+=======
+            VALIDATORS.put(OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE,
+                    OMNI_QS_LAYOUT_COLUMNS_LANDSCAPE_VALIDATOR);
+            VALIDATORS.put(OMNI_QS_LAYOUT_COLUMNS, OMNI_QS_LAYOUT_COLUMNS_VALIDATOR);
+            VALIDATORS.put(FINGERPRINT_SUCCESS_VIB, FINGERPRINT_SUCCESS_VIB_VALIDATOR);
+            VALIDATORS.put(OMNI_QS_TILE_TITLE_VISIBILITY, OMNI_QS_TILE_TITLE_VISIBILITY_VALIDATOR);
+            VALIDATORS.put(OMNI_BACK_GESTURE_HEIGHT, OMNI_BACK_GESTURE_HEIGHT_VALIDATOR);
+            VALIDATORS.put(OMNI_LOCKSCREEN_MEDIA_BLUR, OMNI_LOCKSCREEN_MEDIA_BLUR_VALIDATOR);
+>>>>>>> 65e113353f0... base: configure lock screen media artwork blur level [1/2]
         }
 
         /**
