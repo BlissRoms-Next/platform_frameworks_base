@@ -170,8 +170,6 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     private int mBurnInYOffset;
     private ActivityIntentHelper mActivityIntentHelper;
 
-    private boolean mDisplayFODView;
-
     public KeyguardBottomAreaView(Context context) {
         this(context, null);
     }
@@ -239,16 +237,8 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
         mEnterpriseDisclosure = findViewById(
                 R.id.keyguard_indication_enterprise_disclosure);
         mIndicationText = findViewById(R.id.keyguard_indication_text);
-        mDisplayFODView = getResources()
-                .getBoolean(com.android.internal.R.bool.config_needCustomFODView);
-
-        if (mDisplayFODView) {
-            mIndicationBottomMargin = getResources().getDimensionPixelSize(
-                  R.dimen.op_keyguard_indication_margin_bottom);
-        } else {
-            mIndicationBottomMargin = getResources().getDimensionPixelSize(
-                  R.dimen.keyguard_indication_margin_bottom);
-        }
+        mIndicationBottomMargin = getResources().getDimensionPixelSize(
+                R.dimen.keyguard_indication_margin_bottom);
         mBurnInYOffset = getResources().getDimensionPixelSize(
                 R.dimen.default_burn_in_prevention_offset);
         updateCameraVisibility();
@@ -311,13 +301,8 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     @Override
     protected void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        if (mDisplayFODView) {
-            mIndicationBottomMargin = getResources().getDimensionPixelSize(
-                  R.dimen.op_keyguard_indication_margin_bottom);
-        } else {
-            mIndicationBottomMargin = getResources().getDimensionPixelSize(
-                  R.dimen.keyguard_indication_margin_bottom);
-        }
+        mIndicationBottomMargin = getResources().getDimensionPixelSize(
+                R.dimen.keyguard_indication_margin_bottom);
         mBurnInYOffset = getResources().getDimensionPixelSize(
                 R.dimen.default_burn_in_prevention_offset);
         MarginLayoutParams mlp = (MarginLayoutParams) mIndicationArea.getLayoutParams();
