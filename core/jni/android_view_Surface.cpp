@@ -425,14 +425,6 @@ static jint nativeForceScopedDisconnect(JNIEnv *env, jclass clazz, jlong nativeO
     return surface->disconnect(-1, IGraphicBufferProducer::DisconnectMode::AllLocal);
 }
 
-static jint nativeAttachAndQueueBuffer(JNIEnv *env, jclass clazz, jlong nativeObject,
-        jobject graphicBuffer) {
-    Surface* surface = reinterpret_cast<Surface*>(nativeObject);
-    sp<GraphicBuffer> bp = graphicBufferForJavaObject(env, graphicBuffer);
-    int err = Surface::attachAndQueueBuffer(surface, bp);
-    return err;
-}
-
 static jint nativeSetSharedBufferModeEnabled(JNIEnv* env, jclass clazz, jlong nativeObject,
         jboolean enabled) {
     Surface* surface = reinterpret_cast<Surface*>(nativeObject);
@@ -531,7 +523,6 @@ static const JNINativeMethod gSurfaceMethods[] = {
     {"nativeGetNextFrameNumber", "(J)J", (void*)nativeGetNextFrameNumber },
     {"nativeSetScalingMode", "(JI)I", (void*)nativeSetScalingMode },
     {"nativeForceScopedDisconnect", "(J)I", (void*)nativeForceScopedDisconnect},
-    {"nativeAttachAndQueueBuffer", "(JLandroid/graphics/GraphicBuffer;)I", (void*)nativeAttachAndQueueBuffer},
     {"nativeSetSharedBufferModeEnabled", "(JZ)I", (void*)nativeSetSharedBufferModeEnabled},
     {"nativeSetAutoRefreshEnabled", "(JZ)I", (void*)nativeSetAutoRefreshEnabled},
 

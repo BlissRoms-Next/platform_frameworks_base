@@ -4870,10 +4870,10 @@ public final class Settings {
         public static final String SCREENSHOT_DEFAULT_MODE = "screenshot_default_mode";
 
         /** @hide */
-        public static final String OMNI_BACK_GESTURE_HEIGHT = "back_gesture_height";
+        public static final String BACK_GESTURE_HEIGHT = "back_gesture_height";
 
         /** @hide */
-        private static final Validator OMNI_BACK_GESTURE_HEIGHT_VALIDATOR =
+        private static final Validator BACK_GESTURE_HEIGHT_VALIDATOR =
                 ANY_INTEGER_VALIDATOR;
 
         /**
@@ -4955,7 +4955,7 @@ public final class Settings {
             HEADS_UP_BLACKLIST_VALUES,
             ENABLE_CONDITIONS,
             ENABLE_SUGGESTIONS,
-            SCREEN_OFF_ANIMATION
+            SCREEN_OFF_ANIMATION,
             BACK_GESTURE_HEIGHT,
             LOCKSCREEN_MEDIA_BLUR,
         };

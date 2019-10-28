@@ -357,7 +357,6 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
     }
 
     public boolean canHeadsUp(NotificationEntry entry, StatusBarNotification sbn) {
-        if (mShadeController.isDozing()) {
         // get the info from the currently running task
         List<ActivityManager.RunningTaskInfo> taskInfo = mAm.getRunningTasks(1);
         if(taskInfo != null && !taskInfo.isEmpty()) {
@@ -369,6 +368,10 @@ public class StatusBarNotificationPresenter implements NotificationPresenter,
         }
 
         if(isPackageBlacklisted(sbn.getPackageName())) {
+            return false;
+        }
+
+        if (mShadeController.isDozing()) {
             return false;
         }
 
