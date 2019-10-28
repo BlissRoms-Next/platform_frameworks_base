@@ -196,7 +196,7 @@ public class NavigationModeController implements Dumpable {
 
         mSettingsObserver = new OmniSettingsObserver(new Handler());
         mContext.getContentResolver().registerContentObserver(Settings.System.getUriFor(
-                Settings.System.OMNI_BACK_GESTURE_HEIGHT),
+                Settings.System.BACK_GESTURE_HEIGHT),
                 false, mSettingsObserver, UserHandle.USER_ALL);
 
         IntentFilter preferredActivityFilter = new IntentFilter(ACTION_PREFERRED_ACTIVITY_CHANGED);

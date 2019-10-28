@@ -198,19 +198,6 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     }
 
     protected int adjustDisableFlags(int state) {
-        boolean headsUpVisible = mStatusBarComponent.headsUpShouldBeVisible();
-        if (headsUpVisible) {
-            View clockView = mClockController.getClock();
-            if (clockView == null) {
-                state |= DISABLE_CLOCK;
-            } else {
-                boolean isRightClock = clockView.getId() == R.id.clock_right;
-                if (!isRightClock) {
-                    state |= DISABLE_CLOCK;
-                }
-            }
-        }
-
         if (!mKeyguardMonitor.isLaunchTransitionFadingAway()
                 && !mKeyguardMonitor.isKeyguardFadingAway()
                 && shouldHideNotificationIcons()) {

@@ -756,7 +756,7 @@ public class NotificationMediaManager implements Dumpable, TunerService.Tunable 
 
     private float getLockScreenMediaBlurLevel() {
         float level = (float) Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.OMNI_LOCKSCREEN_MEDIA_BLUR, 25,
+                Settings.System.LOCKSCREEN_MEDIA_BLUR, 25,
                 UserHandle.USER_CURRENT) / 100;
         return level;
     }

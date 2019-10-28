@@ -196,7 +196,7 @@ public class EdgeBackGestureHandler implements DisplayListener {
             return;
         }
         int edgeHeightSetting = Settings.System.getIntForUser(mContext.getContentResolver(),
-                Settings.System.OMNI_BACK_GESTURE_HEIGHT, 0, UserHandle.USER_CURRENT);
+                Settings.System.BACK_GESTURE_HEIGHT, 0, UserHandle.USER_CURRENT);
         // edgeHeigthSettings cant be range 0 - 3
         // 0 means full height
         // 1 measns half of the screen

@@ -316,7 +316,7 @@ public class BatteryBar extends RelativeLayout implements Animatable, TunerServi
         if (mBatteryCharging && mUseChargingColor) {
             return mChargingColor;
         } else if (mBlendColor) {
-            return Utils.getBlendColorForPercent(mColor, mBatteryLowColor,
+            return BlissUtils.getBlendColorForPercent(mColor, mBatteryLowColor,
                     mBlendColorReversed, percentage);
         } else {
             return percentage > BATTERY_LOW_VALUE ? mColor : mBatteryLowColor;
